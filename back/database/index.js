@@ -5,6 +5,6 @@ require('dotenv').config();
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@clusteroc.nhb2j9t.mongodb.net/${process.env.DB_CLUSTER_NAME}?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://fisher:0CqLtUt6MYU8uOJl@clusteroc.nhb2j9t.mongodb.net/Piiquante?retryWrites=true&w=majority`)
         .then(() => {console.log('connexion db ok !')})
         .catch(err => console.log(err));
