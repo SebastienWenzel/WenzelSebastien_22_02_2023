@@ -14,7 +14,7 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '3000' );
+const port = normalizePort(process.env.PORT);
 app.set('port', port);
 
 //Permet de gérer les erreur de connection au port du backend en cas de port déjà utilisé 

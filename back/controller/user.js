@@ -1,6 +1,5 @@
 // on importe le model user
 const User = require('../database/models/user');
-
 //on importe le module de cryptage
 const bcrypt = require('bcrypt');
 
