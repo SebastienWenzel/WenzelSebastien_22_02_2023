@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const helmet = require("helmet");
+const rateLimit = require('express-rate-limit');
 require('./database/index');
 require('dotenv').config();
 const userRoutes = require('./route/user');
@@ -19,7 +21,11 @@ app.use((req, res, next) => {
 //Body-parser présent dans express. Permet de lire le contenu JSON renvoyé par les requêtes POST
 app.use(express.json());
 
-
+app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }));
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 50, // 10 requête en 15 minutes
+}));
 //route sur authentification
 app.use('/api/auth', userRoutes);
 // route sur les sauces
