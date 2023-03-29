@@ -20,8 +20,9 @@ app.use((req, res, next) => {
 
 //Body-parser présent dans express. Permet de lire le contenu JSON renvoyé par les requêtes POST
 app.use(express.json());
-
+//protection les en-têtes http
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }));
+//limite le traffic 
 app.use(rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
 	max: 50, // 10 requête en 15 minutes
