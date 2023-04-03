@@ -25,7 +25,7 @@ app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }));
 //limite le traffic 
 app.use(rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-	max: 50, // 50 requête en 15 minutes
+	max: 100, // 50 requête en 15 minutes
 }));
 //route sur authentification
 app.use('/api/auth', userRoutes);
